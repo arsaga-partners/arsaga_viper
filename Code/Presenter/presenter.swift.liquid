@@ -9,12 +9,13 @@
 // Do not import UIKit
 import Foundation
 
+@MainActor
 protocol {{ module_info.name }}Presentation: AnyObject {
     func viewDidLoad()
 
 }
 
-actor {{ module_info.name }}Presenter {
+final class {{ module_info.name }}Presenter {
 
     private weak var view: {{ module_info.name }}View?
     private var interactor: {{ module_info.name }}Usecase
