@@ -16,11 +16,18 @@ protocol {{ module_info.name }}View: AnyObject {
 
 class {{ module_info.name }}ViewController: UIViewController, StoryboardInstantiatable {
 
+    var presenter: {{ module_info.name }}Presentation？
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        presenter.viewDidLoad()
     }
-    
+
+    func inject(presenter: {{ module_info.name }}Presentation) {
+        self.presenter = presenter
+    }
+
 }
 
 extension {{ module_info.name }}ViewController:  {{ module_info.name }}View{
