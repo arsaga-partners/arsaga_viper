@@ -29,10 +29,6 @@ class {{ module_info.name }}ViewController: UIViewController, StoryboardInstanti
         presenter.viewDidLoad()
     }
 
-    func inject(presenter: {{ module_info.name }}Presentation) {
-        self.presenter = presenter
-    }
-
 }
 
 extension {{ module_info.name }}ViewController: {{ module_info.name }}View{
