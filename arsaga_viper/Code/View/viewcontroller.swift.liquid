@@ -22,6 +22,10 @@ class {{ module_info.name }}ViewController: UIViewController, StoryboardInstanti
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        guard let presenter = presenter else {
+            return
+        }
+
         presenter.viewDidLoad()
     }
 
