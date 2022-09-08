@@ -1,0 +1,34 @@
+//
+//  {{ module_info.name }}{{ module_info.file_name }}
+//  {{ module_info.project_name }}
+//
+//  Created by {{ developer.name }} on {{ date }}.
+//  Copyright © {{ year }} {{ developer.company }}. All rights reserved.
+//
+
+// Do not import UIKit
+import Foundation
+
+protocol {{ module_info.name }}Presentation: AnyObject {
+    func viewDidLoad()
+
+}
+
+actor {{ module_info.name }}Presenter {
+
+    private weak var view: {{ module_info.name }}View?
+    private var interactor: {{ module_info.name }}Usecase
+    private var router: {{ module_info.name }}Wireframe
+
+    init(view: {{ module_info.name }}View,
+         interactor: {{ module_info.name }}Usecase,
+         router: {{ module_info.name }}Wireframe) {
+        self.view = view
+        self.interactor = interactor
+        self.router = router
+    }
+}
+
+extension {{ module_info.name }}Presenter: {{ module_info.name }}Presentation {
+
+}
